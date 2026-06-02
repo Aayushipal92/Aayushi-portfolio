@@ -1,11 +1,9 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import { useTheme } from '../context/ThemeContext'
 import { useInView } from '../hooks/useInView'
 import { personal, isValidLink, softSkills } from '../data/portfolio'
 import { techStackCenter, techStackOrbit } from '../tech-stack'
-import './Skills.css'
 
 const orbitCount = 3
 const orbitGap = 8
@@ -23,13 +21,9 @@ const counterOrbitAnimations = [
   'stack-orbit-counter stack-orbit-counter--24',
 ]
 
-function resolveIconColor(color, isDark) {
-  if (color === '#ffffff') {
-    return isDark ? '#ffffff' : '#0f172a'
-  }
-  if (color === '#010101') {
-    return isDark ? '#f0f2f5' : '#010101'
-  }
+function resolveIconColor(color) {
+  if (color === '#ffffff') return '#ffffff'
+  if (color === '#010101') return '#f0f2f5'
   return color
 }
 
@@ -41,9 +35,9 @@ function StackTooltip({ name, visible }) {
   )
 }
 
-function StackIcon({ item, isDark, name, active, onActivate, onDeactivate }) {
+function StackIcon({ item, name, active, onActivate, onDeactivate }) {
   const Icon = item.Icon
-  const color = resolveIconColor(item.color, isDark)
+  const color = resolveIconColor(item.color)
 
   return (
     <div
@@ -65,12 +59,11 @@ function StackIcon({ item, isDark, name, active, onActivate, onDeactivate }) {
 
 export default function Skills() {
   const [ref, inView] = useInView()
-  const { isDark } = useTheme()
   const [activeSkill, setActiveSkill] = useState(null)
   const center = techStackCenter
   const CenterIcon = center.Icon
   const githubUrl = personal.social.github
-  const centerColor = resolveIconColor(center.color, isDark)
+  const centerColor = resolveIconColor(center.color)
   const orbitPaused = activeSkill !== null
 
   const scrollToProjects = (e) => {
@@ -162,7 +155,6 @@ export default function Skills() {
                       >
                         <StackIcon
                           item={item}
-                          isDark={isDark}
                           name={item.name}
                           active={isActive}
                           onActivate={() => setActiveSkill(item.name)}

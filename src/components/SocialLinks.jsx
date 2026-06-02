@@ -1,7 +1,6 @@
 import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
 import { HiOutlineMail } from 'react-icons/hi'
 import { personal, isValidLink, getWhatsAppUrl } from '../data/portfolio'
-import './SocialLinks.css'
 
 export default function SocialLinks({ className = '', size = 20, showLabels = false }) {
   const items = [

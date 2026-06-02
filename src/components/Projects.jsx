@@ -3,7 +3,6 @@ import { HiExternalLink } from 'react-icons/hi'
 import { FaGithub } from 'react-icons/fa'
 import { useInView } from '../hooks/useInView'
 import { projects, isValidLink } from '../data/portfolio'
-import './Projects.css'
 
 export default function Projects() {
   const [ref, inView] = useInView()

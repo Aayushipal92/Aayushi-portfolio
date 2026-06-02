@@ -2,9 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiMenuAlt3, HiX } from 'react-icons/hi'
 import { navLinks, personal } from '../data/portfolio'
-import ThemeToggle from './ThemeToggle'
 import SocialLinks from './SocialLinks'
-import './Navbar.css'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -59,7 +57,6 @@ export default function Navbar() {
             className={`navbar__social ${!scrolled ? 'social-links--hero' : ''}`}
             size={17}
           />
-          <ThemeToggle className={!scrolled ? 'theme-toggle--hero' : ''} />
           <a
             href="#contact"
             className="btn btn-primary navbar__cta"

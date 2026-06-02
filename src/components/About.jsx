@@ -3,7 +3,6 @@ import { motion } from 'framer-motion'
 import { useInView } from '../hooks/useInView'
 import { personal } from '../data/portfolio'
 import SocialLinks from './SocialLinks'
-import './About.css'
 
 const initials = personal.name
   .split(' ')

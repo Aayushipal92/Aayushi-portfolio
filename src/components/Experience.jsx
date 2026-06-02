@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 import { HiOutlineBriefcase } from 'react-icons/hi'
 import { useInView } from '../hooks/useInView'
 import { experience } from '../data/portfolio'
-import './Experience.css'
 
 export default function Experience() {
   const [ref, inView] = useInView()

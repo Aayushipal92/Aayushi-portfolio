@@ -1,6 +1,5 @@
 import { personal } from '../data/portfolio'
 import SocialLinks from './SocialLinks'
-import './Footer.css'
 
 export default function Footer() {
   const year = new Date().getFullYear()

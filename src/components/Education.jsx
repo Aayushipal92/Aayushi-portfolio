@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from '../hooks/useInView'
 import { education, certificate } from '../data/portfolio'
-import './Education.css'
 
 export default function Education() {
   const [ref, inView] = useInView()

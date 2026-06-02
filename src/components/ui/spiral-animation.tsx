@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
-import './spiral-animation.css'
 
 const CHANGE_EVENT_TIME = 0.32
 const SPIRAL_GROWTH_END = CHANGE_EVENT_TIME + 0.25
@@ -197,13 +196,11 @@ class AnimationController {
     const ctx = this.ctx
     if (!ctx) return
 
-    const isLight = document.documentElement.getAttribute('data-theme') === 'light'
-    const bgColor = isLight
-      ? getComputedStyle(document.documentElement).getPropertyValue('--spiral-bg').trim() || '#eef2f7'
-      : getComputedStyle(document.documentElement).getPropertyValue('--spiral-bg').trim() || '#000000'
-    const particleColor = isLight
-      ? getComputedStyle(document.documentElement).getPropertyValue('--spiral-particle').trim() || '#1e3a5f'
-      : getComputedStyle(document.documentElement).getPropertyValue('--spiral-particle').trim() || '#ffffff'
+    const bgColor =
+      getComputedStyle(document.documentElement).getPropertyValue('--spiral-bg').trim() || '#000000'
+    const particleColor =
+      getComputedStyle(document.documentElement).getPropertyValue('--spiral-particle').trim() ||
+      '#ffffff'
 
     ctx.setTransform(1, 0, 0, 1, 0, 0)
     ctx.scale(this.dpr, this.dpr)

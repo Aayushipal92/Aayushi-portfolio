@@ -3,7 +3,6 @@ import { HiOutlineMail, HiOutlineLocationMarker, HiOutlinePhone } from 'react-ic
 import { FaWhatsapp } from 'react-icons/fa'
 import { useInView } from '../hooks/useInView'
 import { personal, getWhatsAppUrl } from '../data/portfolio'
-import './Contact.css'
 
 const initialForm = { name: '', email: '', phone: '', subject: '', message: '' }
 const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY

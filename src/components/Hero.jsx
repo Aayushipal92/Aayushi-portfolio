@@ -4,7 +4,6 @@ import { HiArrowDown, HiOutlineDownload, HiOutlineMail } from 'react-icons/hi'
 import { FaWhatsapp } from 'react-icons/fa'
 import { SpiralAnimation, getSpiralCircleProgress } from '@/components/ui/spiral-animation'
 import { personal, getWhatsAppUrl } from '../data/portfolio'
-import './Hero.css'
 
 const scrollTo = (id) => {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
