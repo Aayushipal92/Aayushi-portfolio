@@ -1,0 +1,134 @@
+.about__layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  grid-template-rows: auto auto;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.about__profile {
+  grid-row: span 2;
+  padding: 1.75rem;
+  text-align: center;
+}
+
+.about__photo-wrap {
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto 1.25rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--accent-line);
+  box-shadow: var(--shadow-md);
+}
+
+.about__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about__photo-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent-muted), var(--bg-elevated));
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.about__profile-meta h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.about__profile-meta p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.about__location {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: var(--text-subtle);
+  margin-bottom: 1rem;
+}
+
+.about__social {
+  justify-content: center;
+}
+
+.about__text {
+  padding: 2rem;
+}
+
+.about__text p {
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  font-size: 0.975rem;
+  line-height: 1.75;
+}
+
+.about__text p:last-child {
+  margin-bottom: 0;
+}
+
+.about__stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.about__stat {
+  padding: 1.25rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: border-color 0.2s;
+}
+
+.about__stat:hover {
+  border-color: var(--border-strong);
+}
+
+.about__stat-value {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.about__stat-label {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .about__layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .about__profile {
+    grid-row: auto;
+  }
+
+  .about__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .about__stats {
+    grid-template-columns: 1fr;
+  }
+}
